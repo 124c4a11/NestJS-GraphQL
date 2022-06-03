@@ -17,4 +17,8 @@ export class PetsService {
   async findAll(): Promise<Pet[]> {
     return await this.petRepo.find();
   }
+
+  async findById(id: number): Promise<Pet> {
+    return await this.petRepo.findOneByOrFail({ id });
+  }
 }
